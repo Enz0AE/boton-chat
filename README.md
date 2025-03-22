@@ -33,6 +33,7 @@ Agregar el siguiente iframe donde deseas que aparezca el botón:
 
 <iframe src="chat.html" style="border: none; width: 100%; height: 100px; position: fixed; bottom: 0; right: 0; z-index: 9999;" scrolling="no"></iframe>
 
+
 Personalizar URLs de las Sucursales:
 Edita los botones en chat.html y cambia las URLs de las sucursales según corresponda:
 
