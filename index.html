@@ -87,10 +87,21 @@
     </div>
 
     <script>
+        //function toggleChat() {
+            //var chatContainer = document.getElementById("chatContainer");
+            //chatContainer.style.display = chatContainer.style.display === "block" ? "none" : "block";
+        //}
         function toggleChat() {
-            var chatContainer = document.getElementById("chatContainer");
-            chatContainer.style.display = chatContainer.style.display === "block" ? "none" : "block";
-        }
+    var chatContainer = document.getElementById("chatContainer");
+    
+    // Si está oculto, mostrarlo
+    if (chatContainer.style.display === "none" || chatContainer.style.display === "") {
+        chatContainer.style.display = "block";
+    } else {
+        chatContainer.style.display = "none";
+    }
+}
+
 
         function redireccionar(url) {
             window.location.href = url;
