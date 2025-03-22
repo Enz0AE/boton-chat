@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Sucursales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
+        }
+
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .chat-container {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            width: 250px;
+        }
+
+        .chat-container p {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .sucursal-button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .sucursal-button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button class="chat-button" onclick="toggleChat()">💬</button>
+
+    <div class="chat-container" id="chatContainer">
+        <p>¿Cuál de nuestras sucursales queda más cerca de su ubicación?</p>
+        <button class="sucursal-button" onclick="redireccionar('https://ejemplo.com/sucursal1')">Sucursal 1</button>
+        <button class="sucursal-button" onclick="redireccionar('https://ejemplo.com/sucursal2')">Sucursal 2</button>
+        <button class="sucursal-button" onclick="redireccionar('https://ejemplo.com/sucursal3')">Sucursal 3</button>
+        <button class="sucursal-button" onclick="redireccionar('https://ejemplo.com/sucursal4')">Sucursal 4</button>
+        <button class="sucursal-button" onclick="redireccionar('https://ejemplo.com/sucursal5')">Sucursal 5</button>
+        <button class="sucursal-button" onclick="redireccionar('https://ejemplo.com/sucursal6')">Sucursal 6</button>
+        <button class="sucursal-button" onclick="redireccionar('https://ejemplo.com/sucursal7')">Sucursal 7</button>
+        <button class="sucursal-button" onclick="redireccionar('https://ejemplo.com/sucursal8')">Sucursal 8</button>
+        <button class="sucursal-button" onclick="redireccionar('https://ejemplo.com/sucursal9')">Sucursal 9</button>
+        <button class="sucursal-button" onclick="redireccionar('https://ejemplo.com/sucursal10')">Sucursal 10</button>
+    </div>
+
+    <script>
+        function toggleChat() {
+            var chatContainer = document.getElementById("chatContainer");
+            chatContainer.style.display = chatContainer.style.display === "block" ? "none" : "block";
+        }
+
+        function redireccionar(url) {
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+</html>
