@@ -13,22 +13,22 @@
         }
 
         .chat-button {
-            width: 60px;
-            height: 60px;
-            background-color: #06bba6;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-        }
+          width: 60px;
+         height: 60px;
+         background-color: transparent; /* Eliminamos color de fondo */
+         border: none;
+         border-radius: 50%;
+         cursor: pointer;
+         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+         position: fixed;
+         bottom: 20px;
+         right: 20px;
+         background-image: url('https://drive.google.com/file/d/1b9s6fJgGkmDQHLkyxjWLWHLyrZYc9fLg/view?usp=sharing'); /* Ruta de la imagen */
+         background-size: cover; /* Ajusta la imagen al tamaño del botón */
+         background-position: center;
+         background-repeat: no-repeat;
+}
+
 
         .chat-container {
             display: none;
@@ -70,7 +70,7 @@
 </head>
 <body>
 
-    <button class="chat-button" onclick="toggleChat()">💬</button>
+    <button class="chat-button" onclick="toggleChat()"></button>
 
     <div class="chat-container" id="chatContainer">
         <p>¿Cuál de nuestras sucursales queda más cerca de su ubicación?</p>
