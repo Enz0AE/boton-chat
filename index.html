@@ -1,115 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Sucursales</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: transparent;
-            margin: 0;
-            padding: 0;
-        }
-        .chat-button {
-            width: 60px;
-            height: 60px;
-            background-color: #06bba6;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Sucursales</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+    }
 
-        .chat-container {
-            display: none;
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            width: 250px;
-        }
+    .chat-container {
+      padding: 15px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      max-width: 100%;
+      box-sizing: border-box;
+    }
 
-        .chat-container p {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+    .chat-container p {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-        .sucursal-button {
-            display: block;
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            background-color: #068576;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            font-size: 14px;
-        }
+    .sucursal-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      background-color: #068576;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
 
-        .sucursal-button:hover {
-            background-color: #06bba6;
-        }
+    .sucursal-button:hover {
+      background-color: #06bba6;
+    }
 
-    </style>
+    @media (max-width: 400px) {
+      .sucursal-button {
+        font-size: 13px;
+        padding: 8px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="chat-container">
+    <p>¿Cuál de nuestras sucursales queda más cerca de su ubicación?</p>
+    <button class="sucursal-button" onclick="redireccionar('https://wa.link/feorib')">Acceso Sur (ex Garita)</button>
+    <button class="sucursal-button" onclick="redireccionar('https://wa.link/bvkzvw')">Av. Cabo de Horno</button>
+    <button class="sucursal-button" onclick="redireccionar('https://wa.link/lmb2ui')">Candelaria</button>
+    <button class="sucursal-button" onclick="redireccionar('https://wa.link/le2kxa')">Casa Central</button>
+    <button class="sucursal-button" onclick="redireccionar('https://wa.link/8px63y')">Itaembé Guazú</button>
+    <button class="sucursal-button" onclick="redireccionar('https://wa.link/qquoh4')">Itaembé Miní</button>
+    <button class="sucursal-button" onclick="redireccionar('https://wa.link/e5xfog')">Av. Lavalle</button>
+    <button class="sucursal-button" onclick="redireccionar('https://wa.link/3p9bo7')">Av. Quaranta</button>
+    <button class="sucursal-button" onclick="redireccionar('https://wa.link/74ji2n')">Miguel Lanús</button>
+    <button class="sucursal-button" onclick="redireccionar('https://wa.link/5rk4ha')">Ruta 12</button>
+  </div>
 
-    <button class="chat-button" onclick="toggleChat()">💬</button>
-
-    <div class="chat-container" id="chatContainer">
-        <p>¿Cuál de nuestras sucursales queda más cerca de su ubicación?</p>
-        <button class="sucursal-button" onclick="redireccionar('https://wa.link/feorib')">Acceso Sur (ex Garita)</button>
-        <button class="sucursal-button" onclick="redireccionar('https://wa.link/bvkzvw')">Av. Cabo de Horno</button>
-        <button class="sucursal-button" onclick="redireccionar('https://wa.link/lmb2ui')">Candelaria</button>
-        <button class="sucursal-button" onclick="redireccionar('https://wa.link/le2kxa')">Casa Central (cerca de la saladita de Garupá)</button>
-        <button class="sucursal-button" onclick="redireccionar('https://wa.link/8px63y')">Itaembé Guazú</button>
-        <button class="sucursal-button" onclick="redireccionar('https://wa.link/qquoh4')">Itaembé Miní</button>
-        <button class="sucursal-button" onclick="redireccionar('https://wa.link/e5xfog')">Av. Lavalle</button>
-        <button class="sucursal-button" onclick="redireccionar('https://wa.link/3p9bo7')">Av. Quaranta (cerca de Maxiconsumo)</button>
-        <button class="sucursal-button" onclick="redireccionar('https://wa.link/74ji2n')">Miguel Lanús</button>
-        <button class="sucursal-button" onclick="redireccionar('https://wa.link/5rk4ha')">Ruta 12 (frente a Madre Selva)</button>
-    </div>
-
-    <script>
-        //function toggleChat() {
-            //var chatContainer = document.getElementById("chatContainer");
-            //chatContainer.style.display = chatContainer.style.display === "block" ? "none" : "block";
-        //}
-        function toggleChat() {
-    var chatContainer = document.getElementById("chatContainer");
-    
-    // Si está oculto, mostrar
-    if (chatContainer.style.display === "none" || chatContainer.style.display === "") {
-        chatContainer.style.display = "block";
-    } else {
-        chatContainer.style.display = "none";
+  <script>
+    function redireccionar(url) {
+      window.open(url, '_blank');
     }
-}
-
-
-        //function redireccionar(url) {
-        //    window.location.href = url;
-        //}
-        function redireccionar(url) {
-            window.open(url, '_blank'); // Abre en una nueva pestaña
-}
-
-    </script>
-
+  </script>
 </body>
 </html>
+
